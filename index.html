@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yummy</title>
+  <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <section id="loading">
+    <div class="lds-heart">
+      <div></div>
+    </div>
+  </section>
+  <section id="side-bar">
+    <div class="sideBar-inner px-3 bg-black text-white p-4 d-flex flex-column justify-content-between">
+      <div class="links">
+        <ul class="list-unstyled overflow-hidden">
+          <li onclick="showSearch() ;closeSideBar()" class="py-2 position-relative" style="top: 400px">Search</li>
+          <li onclick="categorymeal(); closeSideBar()" class="py-2 position-relative" style="top: 400px">
+            Categories
+          </li>
+          <li onclick="Areameal(); closeSideBar()" class="py-2 position-relative" style="top: 400px">
+            Area
+          </li>
+          <li onclick="Ingredientmeal(); closeSideBar()" class="py-2 position-relative" style="top: 400px">
+            Ingredients
+          </li>
+          <li onclick="closeSideBar()" class="py-2 position-relative" style="top: 400px">
+            Contact Us
+          </li>
+        </ul>
+      </div>
+      <div class="nav-footer">
+        <div class="icons">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-solid fa-globe"></i>
+        </div>
+        <div class="footer">
+          <p>Copyright © 2023 All Rights <br />Reserved.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sideBar-outter text-black px-2 py-4 d-flex flex-column justify-content-between text-center bg-white">
+      <img class="so8er" src="./images/logo.png" alt="" />
+      <i class="fa-solid open-close-icon fa-2x fa-align-justify"></i>
+      <div class="footer">
+        <i class="fa-solid fa-globe d-block"></i>
+        <i class="fa-solid fa-share-nodes"></i>
+      </div>
+    </div>
+  </section>
+  <section id="searchsec" class="d-none">
+    <div class="container row text-black   mx-auto py-5 ">
+      <div id="search" class="mb-2 ">
+        <form action="#" class="row gx-4 gy-4 justify-content-center">
+          <div class="col-10 col-md-6">
+            <input id="nameSearch" type="text" placeholder="Search By Name" class="form-control" data-bs-theme="dark">
+          </div>
+          <div class="col-10 col-md-6">
+            <input id="letterSearch" type="text" placeholder="Search By First Letter" class="form-control"
+              data-bs-theme="dark" maxlength="1">
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="" id="Data">
+    <div class="container">
+      <div class="row py-5 g-4" id="data">
+
+      </div>
+    </div>
+  </section>
+  <div id="contact" class="container mb-5 align-self-end d-none">
+    <form action="#" class="row gx-4 gy-4 justify-content-center">
+      <div class="col-10 col-md-6">
+        <input id="userName" type="text" placeholder="Enter Your Name" class="form-control">
+        <div class="bg-danger-subtle p-2 mt-2 rounded-2 text-danger d-none text-center">
+          <p>Special characters and numbers aren't allowed, must be more than 3 characters</p>
+        </div>
+      </div>
+      <div class="col-10 col-md-6">
+        <input id="userEmail" type="text" placeholder="Enter Your Email" class="form-control">
+        <div class="bg-danger-subtle p-2 mt-2 rounded-2 text-danger d-none text-center">
+          <p>Please, enter a valid email address with @ and . </p>
+        </div>
+      </div>
+      <div class="col-10 col-md-6">
+        <input id="userPhone" type="text" placeholder="Enter Your Phone" class="form-control">
+        <div class="bg-danger-subtle p-2 mt-2 rounded-2 text-danger d-none text-center">
+          <p>Please, enter a valid 11 digit phone number starting with (01)</p>
+        </div>
+      </div>
+      <div class="col-10 col-md-6">
+        <input id="userAge" type="text" placeholder="Enter Your Age" class="form-control">
+        <div class="bg-danger-subtle p-2 mt-2 rounded-2 text-danger d-none text-center">
+          <p>Please enter a valid age between 10 and 99</p>
+        </div>
+      </div>
+      <div class="col-10 col-md-6">
+        <input id="userPassword" type="password" placeholder="Enter Your Password" class="form-control">
+        <div class="bg-danger-subtle p-2 mt-2 rounded-2 text-danger d-none text-center">
+          <p>The password must have at least on 8 characters including one letter and one number
+          </p>
+        </div>
+      </div>
+      <div class="col-10 col-md-6">
+        <input id="userRePassword" type="password" placeholder="ReEnter The Password" class="form-control">
+        <div class="bg-danger-subtle p-2 mt-2 rounded-2 text-danger d-none text-center">
+          <p>The passwords don't match
+          </p>
+        </div>
+      </div>
+      <div class="col-12 text-center">
+        <button type="button" id="submitBtn" onclick="homeMeal(' ')"
+          class="btn btn-outline-danger mx-auto w-auto d-block disabled">Submit</button>
+      </div>
+    </form>
+  </div>
+  <div class="d-flex"></div>
+
+  <script src="./js/code.jquery.com_jquery-3.7.1.min.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
