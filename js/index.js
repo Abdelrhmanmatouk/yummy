@@ -72,6 +72,7 @@ $(document).ready(() => {
 // main functions
 
 function displayCards(arr) {
+
   let mealhtml = ``;
   for (let i = 0; i < arr.length; i++) {
     mealhtml += `
@@ -182,6 +183,7 @@ async function meals(y = "") {
   return food;
 }
 async function homeMeal(a) {
+  contact.addClass('d-none');
   let ma3to2 = await meals(a);
   let mealhtml = ``;
   for (let i = 0; i < ma3to2["meals"].length; i++) {
