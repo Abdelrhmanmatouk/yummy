@@ -2,6 +2,7 @@ body{
     background-color: black;
     color: aliceblue;
     overflow: hidden;
+    margin-left: 70px;
 }
 #side-bar{
     display: flex;
